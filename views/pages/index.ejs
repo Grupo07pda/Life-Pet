@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
+    <script src="js/slide.js"></script>
+    <script src="http://kit.fontawesome.com/ca14b9e588.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>LifePet</title>
+</head>
+
+<body>
+    <%- include('../partials/home')%>
+    
+    <div class="setores">
+        <a href="#">Cachorro</a>
+        <a href="#">Gato</a>
+        <a href="#">Outro Pet</a>
+        <a href="#">Marcas</a>
+        <a href="#">Novidades</a>
+        <a href="#">Raças</a>
+        <a href="#">Saúde</a>
+        <a href="#">Outlet</a>
+    </div>
+    <div class="search-mobile">
+        <form action="/search" class="search1" method="get">
+            <input id="txtbusca" name="q" type="text" value="" placeholder="O que seu pet precisa ?" />
+            <input id="btnBusca" type="submit" class="material-icons-round" value="search" />
+        </form>
+    </div>
+    <div id="linha-horizontal"></div>
+
+    <main class="corpo">
+        
+        <section class="carrosel">
+            <div class="slide">
+                <div class="item-slide">
+                  <div id="voltar" class="btn">
+                    <i class="fas fa-chevron-left"></i>
+                  </div>
+                  <div id="avancar" class="btn">
+                    <i class="fas fa-chevron-right"></i>
+                  </div>
+            
+                  <div id="atual" class="images">
+                    <img src="imagens/2.png" alt="" srcset="">
+                  </div>
+                  <div class="images">
+                    <img src="imagens/1.png" alt="" srcset="">
+                  </div>
+                  <div class="images">
+                    <img src="imagens/3.png" alt="" srcset="">
+                  </div>
+                  <div class="images">
+                    <img src="imagens/4.png" alt="" srcset="">
+                  </div>
+                </div>
+                <div class="position">
+                </div>
+              </div>
+        
+        </section>
+       
+        <section class="propaganda">
+            <div id="desconto">
+                <h3>20% OFF para assinantes do plano de saúde animal.</h3>
+            </div>
+
+        </section>
+
+        <div class="card">
+            <div class="cartao" >
+                <p>Mordedor</p>
+                
+            </div>
+        
+            <div class="cartao">
+                <p>Petisco</p>
+                
+            </div>
+            
+            <div class="cartao">
+                <p>Coleira</p>
+                 
+            </div>
+        
+          </div>
+        
+
+    </main>
+
+    <script>
+            var position = document.querySelector('.position')
+            var quant = document.querySelectorAll('.item-slide .images')
+            var atual = 0
+            var imagem = document.getElementById('atual')
+            var avancar = document.getElementById('avancar')
+            var voltar = document.getElementById('voltar')
+            var rolar = true
+
+            for (let i = 0; i < quant.length; i++) {
+            var div = document.createElement('div')
+            div.id = i
+            position.appendChild(div)
+            }
+            document.getElementById('0').classList.add('primeira')
+
+            var pos = document.querySelectorAll('.position div')
+
+            for (let i = 0; i < pos.length; i++) {
+            pos[i].addEventListener('click', () => {
+                atual = pos[i].id
+                rolar = false
+                slide()
+            })
+            }
+
+            voltar.addEventListener('click', () => {
+            atual--
+            rolar = false
+            slide()
+            })
+
+            avancar.addEventListener('click', () => {
+            atual++
+            rolar = false
+            slide()
+            })
+
+            function slide() {
+            if (atual >= quant.length) {
+                atual = 0;
+            } else if (atual < 0) {
+                atual = quant.length - 1
+            }
+
+            document.querySelector('.primeira').classList.remove('primeira')
+            imagem.style.marginLeft = -1024 * atual +'px'
+            document.getElementById(atual).classList.add('primeira')
+
+            }
+
+            setInterval(()=>{
+            if(rolar){
+                atual++
+                slide()
+            }else{
+                rolar = true
+            }
+            },8000)
+
+    </script>
+</body>
+</html>
