@@ -3,15 +3,11 @@ async function criar(){
     const inputNome = document.getElementById("inputNome")
     const nome = inputNome.value
 
-
     const inputEmail = document.getElementById("inputEmail")
     const email = inputEmail.value
 
-
     const inputSenha = document.getElementById("inputSenha")
     const senha = inputSenha.value
-   
-   
    
     const url= "http://localhost:3000/usuario"
     fetch( url,{

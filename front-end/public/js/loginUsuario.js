@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("Entrei login")
+    console.log("Entrei login");
 })
-
-
 
 async function login(){
     const inputEmail= document.getElementById("input-email")
