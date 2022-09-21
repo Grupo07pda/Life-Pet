@@ -50,12 +50,37 @@ body{
     font-size: 15px;
 }
 
-input[type="text"] {
+input[type=text],
+input[type=date] {
     border: none;
-    margin-top: 40px;
+    margin-top: 14px;
     border-radius: 60px;
     padding: 8px 0 8px 35px;
     outline: none;
     width: 50%;
-    background-color:#429bc5aa;
+    background-color:#ffff;
+}
+
+input[type=radio]{
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+label{
+    font-size: 17px;
+    margin-top: 5px;
+    
+}
+
+button[type="button"] {
+    background: linear-gradient(to right, #3193c1, #58c9fd);
+    color: white;
+    border-radius: 30px;
+    width: 50%;
+    border: none;
+    outline: none;
+    padding: 8px 0 8px 15px;
+    font-size: 15px;
+    margin-top: 40px;
+    cursor: pointer;
 }

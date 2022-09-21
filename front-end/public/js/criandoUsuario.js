@@ -1,4 +1,4 @@
-
+    
 async function criar(){
     const inputNome = document.getElementById("inputNome")
     const nome = inputNome.value

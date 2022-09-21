@@ -23,7 +23,7 @@ async function login(){
     .then(res => {
         console.log(res);
         if(res.usuario.id){
-            window.location.href= "http://localhost:4000";
+            window.location.href= "http://localhost:4000/agendamento";
         }else{
         window.alert("Error: Senha ou email invalidos!!!")
         }

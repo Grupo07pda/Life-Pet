@@ -16,8 +16,11 @@ const login = async(req,res)=>{
         return res.json({message: "email ou senha invalido"});
     }
 
-
+    
+    
     return res.json({usuario:usuarioExistente})
+
+
 }
 
 module.exports = login;
