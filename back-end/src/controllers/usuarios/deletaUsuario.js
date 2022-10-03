@@ -7,7 +7,7 @@ const deletar = async (req, res) => {
             id: id
         }
     });
-    return res.json({ mensagem: "Usuario deletado com sucesso!", usuario: pessoa });
+    return res.status(200).json({ mensagem: "Usuario deletado com sucesso!", usuario: pessoa });
 }
 
 module.exports = deletar;

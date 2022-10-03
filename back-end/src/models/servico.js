@@ -14,6 +14,10 @@ const servico = db.define('servicos',{
         type:Sequelize.DataTypes.STRING,
         allowNull:false
     },
+    servicos:{
+        type:Sequelize.DataTypes.STRING,
+        allowNull:false
+    },
     porte:{
         type:Sequelize.DataTypes.STRING,
         allowNull:false

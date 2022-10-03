@@ -9,7 +9,7 @@ const alterar = async (req,res)=>{
       telefone: telefone || pessoa.telefone
     }, { where: { id: id }});
     const usuarioAtualizado = await usuario.findByPk(id);
-    return res.json({usuario: usuarioAtualizado});
+    return res.status(200).json({usuario: usuarioAtualizado});
 }
 
 module.exports = alterar;

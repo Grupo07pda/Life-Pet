@@ -9,7 +9,7 @@ const criando = async (req,res)=> {
     console.log(req.body)
     const senhaHash=  await hash(senha,8);
     const newuser = await user.create({
-        nome, email, senha:senhaHash
+        nome,email, senha:senhaHash
     });
     console.log(newuser);
     return res.status(201).json({user:newuser})

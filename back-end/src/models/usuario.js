@@ -20,9 +20,8 @@ const usuario = db.define('usuarios', {
     senha:{
         type:Sequelize.DataTypes.STRING,
         allowNull: false
-
-
     }
+    
 })
 
 module.exports = usuario;
